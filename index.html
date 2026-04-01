@@ -3,24 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AXIS — Tu Asistente Personal</title>
+<title>Go On Taty — Tu Asistente Personal</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0a0a0f;
-    --surface: #13131a;
-    --surface2: #1c1c26;
-    --border: #2a2a3a;
-    --accent: #6c63ff;
-    --accent2: #ff6584;
-    --accent3: #43e6b5;
-    --text: #e8e8f0;
-    --text-dim: #7a7a9a;
+    --bg: #0a0f0a;
+    --surface: #111a11;
+    --surface2: #182018;
+    --border: #2a3a2a;
+    --accent: #3a9e5f;
+    --accent2: #f4a235;
+    --accent3: #7ed957;
+    --text: #e8f0e8;
+    --text-dim: #7a9a7a;
     --text-bright: #ffffff;
-    --personal: #ff6584;
-    --work: #6c63ff;
-    --urgent: #ff9f43;
-    --done: #43e6b5;
+    --personal: #f4a235;
+    --work: #3a9e5f;
+    --urgent: #e05c3a;
+    --done: #7ed957;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -39,9 +39,9 @@
     position: fixed;
     inset: 0;
     background:
-      radial-gradient(ellipse 80% 50% at 20% 0%, rgba(108,99,255,0.12) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(255,101,132,0.08) 0%, transparent 60%),
-      radial-gradient(ellipse 40% 60% at 90% 20%, rgba(67,230,181,0.05) 0%, transparent 50%);
+      radial-gradient(ellipse 80% 50% at 20% 0%, rgba(58,158,95,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(244,162,53,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 60% at 90% 20%, rgba(126,217,87,0.07) 0%, transparent 50%);
     pointer-events: none;
     z-index: 0;
   }
@@ -74,7 +74,7 @@
   .logo {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
-    font-size: 22px;
+    font-size: 20px;
     letter-spacing: -0.5px;
     color: var(--text-bright);
     display: flex;
@@ -82,13 +82,16 @@
     gap: 10px;
   }
 
-  .logo-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 12px var(--accent);
-    animation: pulse 2s infinite;
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--accent), var(--accent3));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    box-shadow: 0 0 16px rgba(58,158,95,0.4);
   }
 
   @keyframes pulse {
@@ -151,7 +154,7 @@
   }
 
   .agenda-day-header {
-    background: linear-gradient(135deg, rgba(108,99,255,0.2), rgba(255,101,132,0.1));
+    background: linear-gradient(135deg, rgba(58,158,95,0.2), rgba(244,162,53,0.1));
     padding: 14px 16px;
     border-bottom: 1px solid var(--border);
   }
@@ -219,10 +222,10 @@
     letter-spacing: 0.3px;
   }
 
-  .tag-personal { background: rgba(255,101,132,0.15); color: var(--personal); }
-  .tag-work { background: rgba(108,99,255,0.15); color: var(--work); }
-  .tag-urgent { background: rgba(255,159,67,0.15); color: var(--urgent); }
-  .tag-done { background: rgba(67,230,181,0.15); color: var(--done); }
+  .tag-personal { background: rgba(244,162,53,0.15); color: var(--personal); }
+  .tag-work { background: rgba(58,158,95,0.15); color: var(--work); }
+  .tag-urgent { background: rgba(224,92,58,0.15); color: var(--urgent); }
+  .tag-done { background: rgba(126,217,87,0.15); color: var(--done); }
 
   .check-btn {
     width: 18px;
@@ -266,8 +269,8 @@
 
   /* Welcome */
   .welcome-card {
-    background: linear-gradient(135deg, rgba(108,99,255,0.1), rgba(255,101,132,0.05));
-    border: 1px solid rgba(108,99,255,0.2);
+    background: linear-gradient(135deg, rgba(58,158,95,0.1), rgba(244,162,53,0.05));
+    border: 1px solid rgba(58,158,95,0.2);
     border-radius: 20px;
     padding: 28px;
     text-align: center;
@@ -318,7 +321,7 @@
   .chip:hover {
     border-color: var(--accent);
     color: var(--text);
-    background: rgba(108,99,255,0.1);
+    background: rgba(58,158,95,0.1);
   }
 
   /* Messages */
@@ -369,7 +372,7 @@
   }
 
   .msg.user .msg-bubble {
-    background: linear-gradient(135deg, var(--accent), rgba(108,99,255,0.7));
+    background: linear-gradient(135deg, var(--accent), rgba(58,158,95,0.7));
     color: white;
     border-bottom-right-radius: 4px;
   }
@@ -500,7 +503,7 @@
     transition: all 0.2s;
   }
 
-  .send-btn:hover { background: #7c73ff; transform: scale(1.05); }
+  .send-btn:hover { background: #4ab870; transform: scale(1.05); }
   .send-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
 
   .input-hint {
@@ -550,8 +553,8 @@
     font-weight: 600;
   }
 
-  .badge-urgent { background: rgba(255,159,67,0.15); color: var(--urgent); }
-  .badge-accent { background: rgba(108,99,255,0.15); color: var(--accent); }
+  .badge-urgent { background: rgba(224,92,58,0.15); color: var(--urgent); }
+  .badge-accent { background: rgba(58,158,95,0.15); color: var(--accent); }
 
   .pending-list { padding: 8px; }
 
@@ -785,8 +788,8 @@
   <!-- Header -->
   <header>
     <div class="logo">
-      <div class="logo-dot"></div>
-      AXIS
+      <div class="logo-icon">🌿</div>
+      Go On Taty
     </div>
     <div class="header-date" id="headerDate"></div>
     <div class="header-stats">
@@ -827,8 +830,8 @@
   <main class="main">
     <div class="chat-area" id="chatArea">
       <div class="welcome-card">
-        <span class="welcome-icon">🤖</span>
-        <div class="welcome-title">Hola, soy AXIS</div>
+        <span class="welcome-icon">🌿</span>
+        <div class="welcome-title">Hola, soy Go On Taty</div>
         <div class="welcome-sub">
           Tu asistente personal con IA. Cuéntame tus tareas, reuniones y pendientes en lenguaje natural. Puedes escribir o usar el micrófono.
         </div>
@@ -926,7 +929,7 @@ let mediaRecorder = null;
 let audioChunks = [];
 let conversationHistory = [];
 
-const SYSTEM_PROMPT = `Eres AXIS, un asistente personal inteligente especializado en organización de tareas y agenda. 
+const SYSTEM_PROMPT = `Eres Go On Taty, un asistente personal inteligente especializado en organización de tareas y agenda. 
 Tu trabajo es ayudar al usuario a organizar sus actividades personales y laborales.
 
 Cuando el usuario mencione tareas, reuniones, citas o pendientes, DEBES extraerlos y responder con un JSON estructurado.
@@ -1188,7 +1191,7 @@ function addMessage(role, text, tasks) {
   msg.className = `msg ${role}`;
 
   const time = new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
-  const avatar = role === 'user' ? 'Tú' : '⚡';
+  const avatar = role === 'user' ? 'Tú' : '🌿';
 
   let taskHTML = '';
   if (tasks && tasks.length > 0) {
@@ -1229,7 +1232,7 @@ function showTyping() {
   el.id = 'typingIndicator';
   el.className = 'msg ai';
   el.innerHTML = `
-    <div class="msg-avatar">⚡</div>
+    <div class="msg-avatar">🌿</div>
     <div class="msg-bubble">
       <div class="typing-indicator">
         <div class="typing-dot"></div>
